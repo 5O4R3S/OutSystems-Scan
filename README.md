@@ -9,6 +9,9 @@ This tool is developed in my spare time, so updates may take time to be released
 
 OutSystems has a specific channel on its website for you to make direct contact or send a security report.
 
+![PrintScreen1](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-17_03-27.png)
+![PrintScreen2](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-17_03-28.png)
+
 # Installation
 Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.
 Or download the zip file on your Linux.
