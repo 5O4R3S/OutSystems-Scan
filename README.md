@@ -8,3 +8,15 @@ Objective: The main focus of this tool is to enable security professionals and t
 This tool is developed in my spare time, so updates may take time to be released.
 
 OutSystems has a specific channel on its website for you to make direct contact or send a security report.
+
+# Installation
+Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.
+Or download the zip file on your Linux.
+
+# How to use
+1. Open the terminal in the "out-exploit" directory.
+2. Type "python3 -main.py -u http://domain.com/App".
+3. Press enter.
+
+# Dependencies
+Python3
