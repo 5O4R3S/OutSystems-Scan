@@ -18,7 +18,7 @@ Or download the zip file on your Linux.
 
 # How to use
 1. Open the terminal in the "out-exploit" directory.
-2. Type "python3 -main.py -u http://domain.com/App".
+2. Type "python3 outexploit.py -u http://domain.com/App".
 3. Press enter.
 
 # Dependencies
