@@ -14,12 +14,12 @@ OutSystems has a specific channel on its website for you to make direct contact 
 ![alt text](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25_00-02.png)
 
 <h3>Installation</h3>
-Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.
+Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.</br>
 Or download the zip file on your Linux.
 
 <h3>How to use</h3>
-1. Open the terminal in the "out-exploit" directory.
-2. Type "python3 outexploit.py -u http://personal.outsystemscloud.com/App".
+1. Open the terminal in the "out-exploit" directory.</br>
+2. Type "python3 outexploit.py -u http://personal.outsystemscloud.com/App".</br>
 3. Press enter.
 
 <h3>Dependencies</h3>
