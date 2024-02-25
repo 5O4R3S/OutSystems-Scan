@@ -14,7 +14,7 @@ OutSystems has a specific channel on its website for you to make direct contact 
 ![alt text](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25_00-02.png)
 
 <h3>Installation</h3>
-Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.</br>
+Make a Git clone https://github.com/5O4R3S/OutSystems-Scan.git</br>
 Or download the zip file on your Linux.
 
 <h3>How to use</h3>
