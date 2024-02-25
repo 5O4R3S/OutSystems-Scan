@@ -1,9 +1,0 @@
-test
-123
-2
-teste
-dev
-old
-anonymous
-Screen1
-Screen2
