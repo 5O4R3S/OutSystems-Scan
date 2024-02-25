@@ -1,5 +1,5 @@
-# OutSystems-Exploit
-OutSystems Exploit or Out-Exploit is a tool developed in Python that encompasses a set of modules that allow you to perform analyzes or explorations in applications developed in OutSystems in the Reactive and Mobile frameworks.
+# OutSystems-Scan
+OutSystems Scan or os-scan is a tool developed in Python that encompasses a set of modules that allow you to perform analyzes or explorations in applications developed in OutSystems in the Reactive and Mobile frameworks.
 
 Important: Only run this tool in environments where you are authorized, we are not responsible for the misuse of this tool and the responsibility for its use lies entirely with the professional running it.
 
@@ -18,8 +18,8 @@ Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.</br>
 Or download the zip file on your Linux.
 
 <h3>How to use</h3>
-1. Open the terminal in the "out-exploit" directory.</br>
-2. Type "python3 outexploit.py -u http://personal.outsystemscloud.com/App".</br>
+1. Open the terminal in the "os-scan" directory.</br>
+2. Type "python3 osscan.py -u http://personal.outsystemscloud.com/App".</br>
 3. Press enter.
 
 <h3>Dependencies</h3>
