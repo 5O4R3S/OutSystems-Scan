@@ -9,18 +9,24 @@ This tool is developed in my spare time, so updates may take time to be released
 
 OutSystems has a specific channel on its website for you to make direct contact or send a security report.
 
-![result1](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25 00-00.png)
-![result2](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25 00-01.png)
-![result3](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25 00-02.png)
+![alt text](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25_00-00.png)
+![alt text](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25_00-01.png)
+![alt text](https://github.com/5O4R3S/OutSystems-Exploit/blob/main/Images/2024-02-25_00-02.png)
 
-# Installation
+<h3>Installation</h3>
 Make a Git clone https://github.com/5O4R3S/OutSystems-Exploit.git.
 Or download the zip file on your Linux.
 
-# How to use
+<h3>How to use</h3>
 1. Open the terminal in the "out-exploit" directory.
-2. Type "python3 outexploit.py -u http://domain.com/App".
+2. Type "python3 outexploit.py -u http://personal.outsystemscloud.com/App".
 3. Press enter.
 
-# Dependencies
+<h3>Dependencies</h3>
 Python3
+
+<h3>How to contact me?</h3>
+If you would like to contribute to this tool you can find me at: <a href="https://www.linkedin.com/in/luuucas/" target=”_blank” rel=”noreferrer”>LinkedIn</a> or <a href="https://soarescorp.com/" target=”_blank” rel=”noreferrer”>Personal Site</a>
+
+<h3>Need to check the security of your OutSystems application?</h3>
+I can help you find technical debts and potential points of vulnerability in your OutSystems application, hire through <a href="https://br.fiverr.com/lucas_soares_/verify-the-security-of-your-outsystems-application" target=”_blank” rel=”noreferrer”>Fiverr</a>.
