@@ -3,9 +3,10 @@ import requests
 import re
 
 compromised_component_list = [
-    {"name": "UltimatePDF","version":"12.0.1", "description": "Maybe it allows you to bypass forbidden 403 screens."},
-    {"name": "ImageToolbox","version":"2.1.1", "description": "Maybe vulnerable according to CVE-2016.3714."},
-    {"name": "FroalaEditor","version":"1.0.0", "description": "Perhaps vulnerable according to CVE-2023.41592 reported by LUCAS 5O4R3S."},
+    {"name": "UltimatePDF","Forge version":"12.0.1", "description": "Maybe it allows you to bypass forbidden 403 screens."},
+    {"name": "ImageToolbox","Forge version":"2.1.1", "description": "Maybe vulnerable according to CVE-2016.3714."},
+    {"name": "FroalaEditor","Forge version":"1.0.0", "description": "Perhaps vulnerable according to CVE-2023.41592 reported by LUCAS 5O4R3S."},
+    {"name": "CK Editor 4","Forge version":"1.0.10", "description": "Perhaps vulnerable according to CVE-2022-24728."},
 ]
 
 def check_compromised_component(component_name):
