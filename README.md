@@ -23,10 +23,10 @@ Or download the zip file on your Linux/Windows or Mac that has the Python 3.10 o
 3. Press enter.
 
 <h3>Dependencies</h3>
-Python3
+Python 3.10 or higher
 
 <h3>How to contact me?</h3>
 If you would like to contribute to this tool you can find me at: <a href="https://www.linkedin.com/in/luuucas/" target=”_blank” rel=”noreferrer”>LinkedIn</a> or <a href="https://soarescorp.com/" target=”_blank” rel=”noreferrer”>Personal Site</a>
 
 <h3>Need to check the security of your OutSystems application?</h3>
-I can help you find technical debts and potential points of vulnerability in your OutSystems application, hire through <a href="https://br.fiverr.com/lucas_soares_/verify-the-security-of-your-outsystems-application" target=”_blank” rel=”noreferrer”>Fiverr</a>.
+I can help you find technical debts and potential points of vulnerability in your OutSystems application.
