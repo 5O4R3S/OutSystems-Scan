@@ -1,19 +1,32 @@
 from colorama import Fore, Style
 import requests
 import re
+import exploits.check_CKEditor as check_CKEditor
+import exploits.check_FroalaEditor as check_FroalaEditor
+import exploits.check_UltimatePDF as check_UltimatePDF
 
 compromised_component_list = [
     {"name": "UltimatePDF","Forge version":"12.0.1", "description": "Maybe it allows you to bypass forbidden 403 screens."},
     {"name": "ImageToolbox","Forge version":"2.1.1", "description": "Maybe vulnerable according to CVE-2016.3714."},
     {"name": "FroalaEditor","Forge version":"1.0.0", "description": "Perhaps vulnerable according to CVE-2023.41592 reported by LUCAS 5O4R3S."},
-    {"name": "CK Editor 4","Forge version":"1.0.10", "description": "Perhaps vulnerable according to CVE-2022-24728."},
+    {"name": "CKEditorReactive","Forge version":"1.0.10", "description": "may be vulnerable, running some tests..."},
 ]
 
-def check_compromised_component(component_name):
+
+def check_compromised_component(component_name,environment,app_module_name,header):
     # Accessing list elements
     for item in compromised_component_list:
         if item["name"].lower() == component_name.lower():
-            print(f"| {Fore.WHITE}[200]{Style.RESET_ALL} {Fore.YELLOW}[WARNING] {item['name']} {item['description']}{Style.RESET_ALL}")
+            print(f"| {Fore.WHITE}[200]{Style.RESET_ALL} {Fore.YELLOW}[{item['name']}] [WARNING] {item['description']}{Style.RESET_ALL}")
+            # Verify CKEditor componente
+            if item["name"].lower() == "ckeditorreactive":
+                check_CKEditor.call_CKEditor_exploits(environment,app_module_name,header,"CKEditorReactive")
+            # Verify FroalaEditor componente
+            if item["name"].lower() == "froalaeditor":
+                check_FroalaEditor.call_FroalaEditor_exploits(environment,app_module_name,header,"FroalaEditor")
+            # Verify FroalaEditor componente
+            if item["name"].lower() == "ultimatepdf":
+                check_UltimatePDF.call_UltimatePDF_exploits(environment,app_module_name,header,"UltimatePDF")
             return True
     return False
 
@@ -41,7 +54,7 @@ def get_module_references(environment,app_module_name,header):
             module_name_filtered = re.findall(regex, lines)[0]
 
             # Check compromised components
-            result = check_compromised_component(module_name_filtered)
+            result = check_compromised_component(module_name_filtered,environment,app_module_name,header)
 
             # Print informations
             if not result:

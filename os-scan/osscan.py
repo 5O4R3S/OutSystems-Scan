@@ -59,7 +59,7 @@ print("""\
   \____/|_____/     |_____/ \___\__,_|_| |_|
                                                          
 """)
-print(f"  Developed by {Fore.RED}5O4R3S{Style.RESET_ALL} to exploit developers' technical debt. | https://soarescorp.com/")
+print(f"  Developed by {Fore.RED}5O4R3S{Style.RESET_ALL} to exploit OutSystems developers' technical debt. | For contact https://soarescorp.com/")
 print(f"  {Fore.WHITE}{Style.DIM}Do not run this tool in environments where you are not authorized, you are responsible for your actions. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.{Style.RESET_ALL}")
 print(f"\n")
 print(f"{Fore.WHITE}[i] {commons.get_current_datetime()} The analysis is starting...{Style.RESET_ALL}")
@@ -109,4 +109,4 @@ else:
     # Printing the response code and error message
     # Print the key normally
     print(f"{Fore.RED}There was a problem trying to access the url, more details below:{Style.RESET_ALL}")
-    print(f"{Fore.RED}{Style.DIM}outexploit.py - Erro: {response.status_code} - {response.reason}{Style.RESET_ALL}")
+    print(f"{Fore.RED}{Style.DIM}osscan.py - Erro: {response.status_code} - {response.reason}{Style.RESET_ALL}")
