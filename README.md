@@ -15,7 +15,7 @@ OutSystems has a specific channel on its website for you to make direct contact 
 
 <h3>Installation</h3>
 Make a Git clone https://github.com/5O4R3S/OutSystems-Scan.git</br>
-Or download the zip file on your Linux.
+Or download the zip file on your Linux/Windows or Mac that has the Python 3.10 or higher library installed.
 
 <h3>How to use</h3>
 1. Open the terminal in the "os-scan" directory.</br>
