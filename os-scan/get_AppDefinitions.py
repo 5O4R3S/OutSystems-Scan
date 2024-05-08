@@ -1,6 +1,5 @@
 from colorama import Fore, Style
 import requests
-import commons
 import get_RealAddress
 
 def get_app_definitions(environment,app_module_name,header):

@@ -1,7 +1,6 @@
 from colorama import Fore, Style
 import requests
 import re
-import commons
 
 def get_all_clientvaribles(environment,app_module_name,header):
 

@@ -10,6 +10,8 @@ import get_EndScope
 import get_Resources
 import get_ClientVariables
 import get_MobileApp
+import get_LoginSample
+import get_SAPInformations
 
 # Create an argument parser
 parser = argparse.ArgumentParser(prog="OutSystems Scan", 
@@ -87,7 +89,12 @@ def exploit_modules(data,environment,app_module_name):
     print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for ClientVariables in the application...{Style.RESET_ALL}")
     get_ClientVariables.get_all_clientvaribles(environment,app_module_name,header)
     
-    
+    print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for Sample Login Pages in the application...{Style.RESET_ALL}")
+    get_LoginSample.get_LoginScreens(environment,header)
+
+    print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for SAP informations in the application...{Style.RESET_ALL}")
+    get_SAPInformations.get_SapInformations(environment,header)
+
     get_EndScope.scan_completed()
     
 # Sending a GET request to the URL
