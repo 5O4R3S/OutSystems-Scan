@@ -12,6 +12,7 @@ import get_ClientVariables
 import get_MobileApp
 import get_LoginSample
 import get_SAPInformations
+import get_AppFeedback
 
 # Create an argument parser
 parser = argparse.ArgumentParser(prog="OutSystems Scan", 
@@ -61,7 +62,7 @@ print("""\
   \____/|_____/     |_____/ \___\__,_|_| |_|
                                                          
 """)
-print(f"  Developed by {Fore.RED}5O4R3S{Style.RESET_ALL} to exploit OutSystems developers' technical debt. | For contact https://soarescorp.com/")
+print(f"  Developed by {Fore.RED}LUCAS 5O4R3S{Style.RESET_ALL} to exploit OutSystems developers' technical debt. | For contact https://soarescorp.com/")
 print(f"  {Fore.WHITE}{Style.DIM}Do not run this tool in environments where you are not authorized, you are responsible for your actions. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.{Style.RESET_ALL}")
 print(f"\n")
 print(f"{Fore.WHITE}[i] {commons.get_current_datetime()} The analysis is starting...{Style.RESET_ALL}")
@@ -94,6 +95,9 @@ def exploit_modules(data,environment,app_module_name):
 
     print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for SAP informations in the application...{Style.RESET_ALL}")
     get_SAPInformations.get_SapInformations(environment,header)
+
+    print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for ECT Feedback App in the environment...{Style.RESET_ALL}")
+    get_AppFeedback.get_EctAppFeedback(environment,app_module_name,header)
 
     get_EndScope.scan_completed()
     
