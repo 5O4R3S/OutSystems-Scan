@@ -117,7 +117,14 @@ if response.status_code == 200:
     exploit_modules(data,environment,app_module_name)
 else:
     # The request failed
+    if response.status_code == 403:
+        print(f"{Fore.RED}[i] The target environment has blocked our access, but you can try to access the module information directly in the browser by accessing the url below:{Style.RESET_ALL}")
+        print(f"{Fore.RED}[i] URL with module informations: {Fore.WHITE}{module_informations_url}{Style.RESET_ALL}")
+
+
     # Printing the response code and error message
     # Print the key normally
+    print(f"{Fore.RED}{Style.RESET_ALL}")
+    print(f"{Fore.RED}*****************************************************************{Style.RESET_ALL}")
     print(f"{Fore.RED}There was a problem trying to access the url, more details below:{Style.RESET_ALL}")
     print(f"{Fore.RED}{Style.DIM}osscan.py - Erro: {response.status_code} - {response.reason}{Style.RESET_ALL}")
