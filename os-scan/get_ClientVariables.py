@@ -1,6 +1,9 @@
 from colorama import Fore, Style
 import requests
 import re
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_all_clientvaribles(environment,app_module_name,header):
 
@@ -8,7 +11,7 @@ def get_all_clientvaribles(environment,app_module_name,header):
 
     # Sending a GET request to the URL
     url = environment+'/'+app_module_name+'/scripts/'+app_module_name+'.clientVariables.js'
-    response = requests.get(url, headers=header)
+    response = requests.get(url, headers=header, verify=False)
 
     # Checking the response code
     if response.status_code == 200:

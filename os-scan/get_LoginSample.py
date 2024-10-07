@@ -1,6 +1,9 @@
 from colorama import Fore, Style
 import requests
 import re
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_LoginScreens(environment,header):
     # Checking phone screen login
@@ -12,24 +15,9 @@ def get_LoginScreens(environment,header):
     check_ReactiveSample(environment,header)
 
 def check_PhoneSampleScreen(environment,header):
-    url_PhoneSample = environment+'/Template_PhoneSampleUserApp/Login'
+    url_PhoneSample = environment+'/Template_PhoneSampleUserApp/scripts/Template_PhoneSampleUserApp.Common.Login.mvc.js'
     # Sending a GET request to the URL
-    response = requests.get(url_PhoneSample, headers=header)
-
-    # Checking the response code
-    if response.status_code == 200:
-        # The request was successful
-        print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] The module is online and a possible Broken Access Control vulnerability exists.{Style.RESET_ALL}")
-        print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] Try authenticating using the demo user and then accessing the URL of the target application.{Style.RESET_ALL}")
-        print(f"| {Fore.RED}[POC] {Style.DIM}[Template_PhoneSample] Login using url: {environment}/Template_PhoneSampleUserApp/Login{Style.RESET_ALL}")
-    else:
-        # The request failed
-        print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] The sample login 'Template_PhoneSample' is not available.{Style.RESET_ALL}")
-
-def check_ReactiveSample(environment,header):
-    url_ReactiveSample = environment+'/Template_ReactiveSampleUserApp/scripts/Template_ReactiveSampleUserApp.Common.Login.mvc.js'
-    # Sending a GET request to the URL
-    response = requests.get(url_ReactiveSample, headers=header)
+    response = requests.get(url_PhoneSample, headers=header, verify=False)
 
     # Checking the response code
     if response.status_code == 200:
@@ -37,6 +25,31 @@ def check_ReactiveSample(environment,header):
         # Regular expression to capture text in single quotes
         # e.g Return "}, "Login"))];"
         regex = r'\},\s*"Login"\)\)\);'
+
+        # Extract values
+        result = re.search(regex,response.text)
+        if result:
+            # The request was successful
+            print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] The module is online and a possible Broken Access Control vulnerability exists.{Style.RESET_ALL}")
+            print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] Try authenticating using the demo user and then accessing the URL of the target application.{Style.RESET_ALL}")
+            print(f"| {Fore.RED}[POC] {Style.DIM}[Template_PhoneSample] Login using url: {environment}/Template_PhoneSampleUserApp/Login{Style.RESET_ALL}")
+        else:
+            print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] The login screen for the 'Template_PhoneSampleUserApp' module is online, BUT IT IS NOT THE VULNERABLE VERSION.{Style.RESET_ALL}")
+    else:
+        # The request failed
+        print(f"| {Fore.WHITE}[|||] {Style.DIM}[Template_PhoneSample] The sample login 'Template_PhoneSampleUserApp' is not available.{Style.RESET_ALL}")
+
+def check_ReactiveSample(environment,header):
+    url_ReactiveSample = environment+'/Template_ReactiveSampleUserApp/scripts/Template_ReactiveSampleUserApp.Common.Login.mvc.js'
+    # Sending a GET request to the URL
+    response = requests.get(url_ReactiveSample, headers=header, verify=False)
+
+    # Checking the response code
+    if response.status_code == 200:
+
+        # Regular expression to capture text in single quotes
+        # e.g Return "}, "Login"))];"
+        regex = r'\},\s*"Login"\)\)\)\];'
 
         # Extract values
         result = re.search(regex,response.text)

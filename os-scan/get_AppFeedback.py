@@ -1,6 +1,9 @@
 from colorama import Fore, Style
 import requests
 import re
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_EctAppFeedback(environment,app_module_name,header):
     # Checking ECT Provider version
@@ -15,7 +18,7 @@ def default_msg(environment):
 def check_ECTModule(environment,app_module_name,header):
     url_ECTProvider = environment+'/ECT_Provider/_osjs.js'
     # Sending a GET request to the URL
-    response = requests.get(url_ECTProvider, headers=header)
+    response = requests.get(url_ECTProvider, headers=header, verify=False)
 
     # Checking the response code
     if response.status_code == 200:

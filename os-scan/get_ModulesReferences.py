@@ -4,6 +4,9 @@ import re
 import exploits.check_CKEditor as check_CKEditor
 import exploits.check_FroalaEditor as check_FroalaEditor
 import exploits.check_UltimatePDF as check_UltimatePDF
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 compromised_component_list = [
     {"name": "UltimatePDF","Forge version":"12.0.1", "description": "Maybe it allows you to bypass forbidden 403 screens."},
@@ -24,7 +27,7 @@ def check_compromised_component(component_name,environment,app_module_name,heade
             # Verify FroalaEditor componente
             if item["name"].lower() == "froalaeditor":
                 check_FroalaEditor.call_FroalaEditor_exploits(environment,app_module_name,header,"FroalaEditor")
-            # Verify FroalaEditor componente
+            # Verify Ultimate componente
             if item["name"].lower() == "ultimatepdf":
                 check_UltimatePDF.call_UltimatePDF_exploits(environment,app_module_name,header,"UltimatePDF")
             return True
@@ -34,7 +37,7 @@ def get_module_references(environment,app_module_name,header):
 
     # Sending a GET request to the URL
     url = environment+'/'+app_module_name+'/scripts/'+app_module_name+'.referencesHealth.js'
-    response = requests.get(url, headers=header)
+    response = requests.get(url, headers=header, verify=False)
 
     # Checking the response code
     if response.status_code == 200:

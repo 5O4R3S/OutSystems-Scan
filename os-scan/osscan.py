@@ -1,5 +1,6 @@
 import argparse
 from urllib.parse import urlparse
+import urllib3
 from colorama import Fore, Style
 import commons
 import requests
@@ -13,6 +14,8 @@ import get_MobileApp
 import get_LoginSample
 import get_SAPInformations
 import get_AppFeedback
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Create an argument parser
 parser = argparse.ArgumentParser(prog="OutSystems Scan", 
@@ -102,7 +105,7 @@ def exploit_modules(data,environment,app_module_name):
     get_EndScope.scan_completed()
     
 # Sending a GET request to the URL
-response = requests.get(module_informations_url, headers=header)
+response = requests.get(module_informations_url, headers=header, verify=False)
 
 # Checking the response code
 if response.status_code == 200:

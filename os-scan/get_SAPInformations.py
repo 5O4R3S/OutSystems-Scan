@@ -1,13 +1,15 @@
 from colorama import Fore, Style
 import requests
-import json
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_SapInformations(environment,header):
 
     url = environment+'/SAPDevService/rest/SAP/CheckSAPHealth'
 
     # Sending a GET request to the URL
-    response = requests.get(url, headers=header)
+    response = requests.get(url, headers=header, verify=False)
 
     # Checking the response code
     if response.status_code == 200:
