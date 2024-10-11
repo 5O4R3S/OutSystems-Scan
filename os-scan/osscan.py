@@ -14,6 +14,7 @@ import get_MobileApp
 import get_LoginSample
 import get_SAPInformations
 import get_AppFeedback
+import get_Roles
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -65,7 +66,7 @@ print("""\
   \____/|_____/     |_____/ \___\__,_|_| |_|
                                                          
 """)
-print(f"  Developed by {Fore.RED}LUCAS 5O4R3S{Style.RESET_ALL} to exploit OutSystems developers' technical debt. | For contact https://soarescorp.com/")
+print(f"  Developed by {Fore.RED}LUCAS 5O4R3S{Style.RESET_ALL} to exploit OutSystems developers' technical debt and known vulnerabilities. | For contact https://soarescorp.com/")
 print(f"  {Fore.WHITE}{Style.DIM}Do not run this tool in environments where you are not authorized, you are responsible for your actions. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.{Style.RESET_ALL}")
 print(f"\n")
 print(f"{Fore.WHITE}[i] {commons.get_current_datetime()} The analysis is starting...{Style.RESET_ALL}")
@@ -92,6 +93,9 @@ def exploit_modules(data,environment,app_module_name):
     
     print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for ClientVariables in the application...{Style.RESET_ALL}")
     get_ClientVariables.get_all_clientvaribles(environment,app_module_name,header)
+
+    print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for roles used in the application...{Style.RESET_ALL}")
+    get_Roles.get_all_roles(environment,app_module_name,header)
     
     print(f"{Fore.WHITE}{Style.BRIGHT}[i] {commons.get_current_datetime()} Searching for Sample Login Pages in the application...{Style.RESET_ALL}")
     get_LoginSample.get_LoginScreens(environment,header)
