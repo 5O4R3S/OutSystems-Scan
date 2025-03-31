@@ -37,7 +37,7 @@ def get_app_definitions(environment,app_module_name,header):
         print(f"| {Fore.WHITE}Environment: {Style.DIM}[NAME={environment_name} KEY={environment_key}]{Style.RESET_ALL}")
         print(f"| {Fore.WHITE}User tenant provider: {Style.DIM}{user_provider}{Style.RESET_ALL}")
         print(f"| {Fore.WHITE}Home module key: {Style.DIM}{home_module_key}{Style.RESET_ALL}")
-        print(f"| {Fore.WHITE}Real DNS (enterprise only): {Style.DIM}{get_RealAddress.get_address(environment)}/{app_module_name}{Style.RESET_ALL}")
+        print(f"| {Fore.WHITE}Real DNS (enterprise only): {Style.DIM}{get_RealAddress.get_address(environment)}{Style.RESET_ALL}")
 
         # Return
         return application_name
