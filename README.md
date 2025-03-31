@@ -1,4 +1,7 @@
-# OutSystems-Scan
+# OutSystems-Scan (Outdated)
+
+# ATTENTION: This tool is outdated and discontinued, I made a new WEB version, with more details and better analysis and report generation at the end of the scan, with the WEB version, it is no longer necessary to update this PYTHON repository.
+
 OutSystems Scan or os-scan is a tool developed in Python that encompasses a set of modules that allow you to perform analyzes or explorations in applications developed in OutSystems in the Reactive and Mobile frameworks.
 
 Important: Only run this tool in environments where you are authorized, we are not responsible for the misuse of this tool and the responsibility for its use lies entirely with the professional running it.
